@@ -1,0 +1,19 @@
+name: Deploy site via Fleek
+on: push
+jobs:
+  deploy-to-fleek:
+    runs-on: ubuntu-latest
+    env:
+      FLEEK_TOKEN: ${{ pat_yVU98RDGhVewCktWZcEk }}
+      FLEEK_PROJECT_ID: ${{ clsled61v0007kt090hg4lnmp }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install Fleek CLI
+        run: npm i -g @fleek-platform/cli
+      - name: Build & deploy sites
+        run: fleek sites deploy

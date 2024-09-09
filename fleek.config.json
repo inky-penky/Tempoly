@@ -1,0 +1,9 @@
+{
+    "sites": [
+      {
+        "slug": "fat-cpu-some",
+        "distDir": "",
+        "buildCommand": ""
+      }
+    ]
+  }
